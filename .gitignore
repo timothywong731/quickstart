@@ -214,4 +214,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# VSCode settings
 .vscode/settings.json
+
+# GitHub Copilot instructions
+# This should be generated and managed locally. Always keep it up-to-date and 
+.github/copilot-instructions.md
