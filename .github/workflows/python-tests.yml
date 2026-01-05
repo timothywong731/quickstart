@@ -39,7 +39,7 @@ jobs:
 
       - name: Run tests
         run: |
-          poetry run pytest --cov=quickstart --cov-report=xml
+          poetry run pytest --cov=quickstart --cov-report=xml --junitxml=junit.xml -o junit_family=legacy
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
@@ -47,3 +47,9 @@ jobs:
           file: ./coverage.xml
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: false
+
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
