@@ -1,4 +1,5 @@
 from datetime import datetime
+
 from quickstart.utils.datetime import format_datetime
 
 
@@ -24,4 +25,3 @@ def test_format_datetime_single_digits():
 
     # Assert
     assert result == expected
-
